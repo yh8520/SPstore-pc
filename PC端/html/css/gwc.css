@@ -1,0 +1,132 @@
+.cart{
+    width: 1070px;
+    margin: 0 auto;
+}
+.nav{
+    display: flex;
+    margin: 8px auto;
+    border-radius: 6px;
+}
+.left{
+    width:500px;
+    height:40px;
+}
+.right{
+    width:570px;
+    height:40px;
+}
+.right>input{
+    width:280px;
+    height:25px;
+    padding-left:20px;
+    margin:5px 0 0 260px;
+    border-radius: 6px;
+    outline: none;
+    border:1px solid #ddd
+}
+.hide{ display: none; }
+
+.left>div{
+    margin-top:10px;
+}
+
+.list>div>span{
+    display: inline-block;
+    font-size: 15px;
+}
+.list .choose{
+    width: 125px;
+}
+.list>div{
+    margin: 10px auto;
+    padding: 0 30px;
+    height: 40px;
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+    background: #fff;
+    color: #666;
+    line-height: 40px;
+}
+.list .price{
+    width: 125px;
+}
+.list .pro{
+    width: 125px;
+}
+.list .num{
+    width: 125px;
+}
+.list .count{
+    width: 125px;
+}
+.list .more{
+    width: 125px;
+}
+.cart .item{
+    width:1020px;
+    margin: 5px auto;
+    border:1px solid #ddd
+}
+.cart .item>ul>li{
+    float: left;
+}
+.cart .item>ul::after{
+    display: block;
+    content: "";
+    clear: both;
+}
+.item .ckb_t{
+    margin-top:20px;
+}
+.item .suo_img{
+    width: 75px;   
+}
+.item .img_w{
+    width: 100px;
+}
+.item .pro_w{
+    width: 150px;
+}
+.item .price_w{
+    width: 120px;
+}
+.item .btn_w{
+    width: 150px;
+}
+.item .btn_w>div>button{
+    border:1px solid #ddd;
+    cursor: pointer;
+    background:white;
+    outline: none
+}
+.item .btn_w>div>span{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.sum_count{
+    display: flex;
+    justify-content: space-between;
+    width: 1070px;
+    margin: 0 auto;
+    height:50px;
+}
+.sum>ul>li{
+    float: left;
+    margin-right:30px;
+    text-align: center;
+    line-height: 50px;
+}
+.sum>ul>li>a{
+    display: block;
+    width: 100px;
+    height:40px;
+    line-height: 40px;
+    margin-top:4px;
+    background:red;
+    font-size:16px;
+    color:white;
+    border-radius: 6px;
+}

@@ -1,0 +1,72 @@
+.login{
+    width:1070px;
+    height:400px;
+    margin:120px auto;
+    display: flex;
+    justify-content: space-between
+}
+.login_img{
+   margin:50px 50px;
+}
+.log_one{
+    width:400px;
+    display: flex;
+    justify-content: space-between
+}
+.log>.log_one>div{
+    width:160px;
+    height:65px;
+    line-height:65px;
+}
+.log>.log_input{
+    width:350px;
+    height:65px;
+    line-height:65px;
+    text-align: center;
+}
+.log>.log_input>input{
+    width:300px;
+    height:50px;
+    border:1px solid #ddd;
+}
+.log>.log_input>.yin{
+    background:url(../yhd_img/y.png) no-repeat 10px 15px;
+    padding-left:40px;
+}
+.log>.log_input>.yin1{
+    background:url(../yhd_img/suo.png) no-repeat 10px 15px;
+    padding-left:40px;
+}
+.mar_l1{
+    margin-left:40px;
+}
+.mar_l{
+    margin-left:30px;
+}
+.log>.log_input>.tijiao{
+    background-color:#ff3c3f;
+    font-size:20px;
+    color:#fff;
+    outline:0 none;
+    border:none;
+    width:345px;
+}
+.mar_a>ul>li>a{
+    margin-right:10px;
+}
+.mar_a>ul>li{
+    float:left;
+    margin-right:40px;
+}
+.mar_a>ul>.more{
+    margin-top:8px;
+}
+.mar_a>ul>.more>a>img{
+    vertical-align: middle
+}
+.more>#carou{
+    border:1px solid red;
+}
+.footer b{
+    margin:0 5px;
+}

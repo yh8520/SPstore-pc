@@ -1,0 +1,30 @@
+.header{
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between
+}
+.header_right a>img{
+    vertical-align: middle
+}
+.load_app{
+    position: relative;
+    display: inline;
+}
+.header_right>a{
+    display: inline-block;
+    margin-right:10px
+}
+.app{
+    width:110px;
+    display: none;
+    position:absolute;
+    z-index:5;
+    right:-10px;
+    background:white;
+    border:1px solid #f1f1f1;
+}
+.app>img{
+    width:90px;
+    margin:0px 10px;
+}

@@ -1,0 +1,150 @@
+
+<!-- saved from url=(0054)http://www.yhd.com/html/getLocalStorage.html?v=2019113 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title> New Document </title>
+<script>
+
+(function() {
+	var loli = window["loli"] || (window["loli"] = {});
+	var localStorageName = 'localStorage',
+		sessionStorageName = 'sessionStorage',
+		yhdStore = {},
+		yhdSessionStore = {};
+
+	yhdStore.set = function(key, value) {};
+	yhdStore.get = function(key) {};
+	yhdStore.remove = function(key) {};
+	yhdStore.clear = function() {};
+
+	yhdSessionStore.set = function(key, value) {};
+	yhdSessionStore.get = function(key) {};
+	yhdSessionStore.remove = function(key) {};
+	yhdSessionStore.clear = function() {};
+
+	function isStorageSupported(storageName) {
+		try {
+			return (storageName in window && window[storageName]);
+		} catch (err) {
+			return false;
+		}
+	}
+
+	function initStorage(storageName, obj) {
+		var storage = window[storageName];
+		obj.set = function(key, val) {
+			if (val === undefined) {
+				return storage.remove(key);
+			}
+			storage.setItem(key, val);
+			return val;
+		};
+		obj.get = function(key) {
+			return storage.getItem(key);
+		};
+		obj.remove = function(key) {
+			storage.removeItem(key);
+		};
+		obj.clear = function() {
+			storage.clear();
+		};
+	}
+
+	//localStorage
+	if (isStorageSupported(localStorageName)) {
+		initStorage(localStorageName, yhdStore);
+	}
+
+	//sessionStorage
+	if (isStorageSupported(sessionStorageName)) {
+		initStorage(sessionStorageName, yhdSessionStore);
+	}
+
+	loli.yhdStore = yhdStore;
+	loli.yhdSessionStore = yhdSessionStore;
+})();
+
+function myTrim(x) {
+    return x.replace(/^\s+|\s+$/gm,'');
+}
+
+function parseJSON( data ) {
+	if ( typeof data !== "string" || !data ) {
+		return null;
+	}
+
+	// Make sure leading/trailing whitespace is removed (IE can't handle it)
+	data = myTrim( data );
+		
+	// Make sure the incoming data is actual JSON
+	// Logic borrowed from http://json.org/json2.js
+	var rvalidchars = /^[\],:{}\s]*$/;
+	var rvalidescape = /\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g;
+	var rvalidtokens = /"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g;
+	var rvalidbraces = /(?:^|:|,)(?:\s*\[)+/g;
+	if ( rvalidchars.test(data.replace(rvalidescape, "@")
+		.replace(rvalidtokens, "]")
+		.replace(rvalidbraces, "")) ) {
+
+		// Try to use the native JSON parser first
+		return window.JSON && window.JSON.parse ?
+				window.JSON.parse( data ) :
+				(new Function("return " + data))();
+
+	} else {
+		return null;
+	}
+}
+
+//注册接受消息事件 by wei 2014.3.13
+function registLoadEvent() {
+	if (!window.addEventListener || !window.postMessage) {
+		return;
+	}
+	
+	window.addEventListener("message", function(message) {
+		var re = /^http[s]?:\/\/([\.\w]*)\.yhd\.com/i;
+		var re2 = /^http[s]?:\/\/([\.\w]*)\.yihaodian\.com\.hk/i;
+		if (re.test(message.origin) || re2.test(message.origin)) {
+			var data = message.data;
+			if (data) {
+				if (typeof data == 'object') {
+					if (data.op!=null && data.op!="storage") {
+						return;
+					}
+					var loli = window["loli"] || (window["loli"] = {});
+					var storage = (data.type && data.type=='session') ? loli.yhdSessionStore : loli.yhdStore;
+					var key = data.key;
+					var host = data.host;
+					var version = data.version;
+					var value = storage.get(key);
+					window.parent.postMessage({key:key, value:value, version:version, op:"storage"}, host);
+				}
+				//fix IE9 bug
+				else if (typeof data == 'string') {
+					data = parseJSON(data);
+					if (data!=null) {
+						if (data.op!=null && data.op!="storage") {
+							return;
+						}
+						var loli = window["loli"] || (window["loli"] = {});
+						var storage = (data.type && data.type=='session') ? loli.yhdSessionStore : loli.yhdStore;
+						var key = data.key;
+						var host = data.host;
+						var version = data.version;
+						var value = storage.get(key);
+						window.parent.postMessage('{"key":"'+key+'", "value":"'+value+'", "version":"'+version+'", "op":"storage"}', host);
+					}
+				}
+			}
+		}
+	});
+}
+
+</script>
+</head>
+
+<body onload="registLoadEvent()">
+
+
+</body></html>

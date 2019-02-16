@@ -1,0 +1,184 @@
+.bg-color{
+    background-color:rgb(235, 233, 233);
+    margin-bottom: 50px;
+}
+.sNav{
+    width:1070px;
+    margin:0 auto;
+    border-top:2px solid red;
+    background-color:white
+}
+.list-first{
+    display: flex;
+    height:40px;
+    line-height:40px;
+    border-bottom:1px solid #ddd;
+}
+.list-WAI{
+    height:70px;
+}
+.liTong>ul>li{
+    float: left;
+    margin-left:20px;
+}
+.liTong>ul>li>a{
+    font-size:12px;
+    color:black;
+}
+.liTong>ul>li>a:hover{
+    color:red;
+}
+.line-h{
+    line-height:22px;
+}
+.list-w>a{
+    color:black;
+    font-size: 14px;
+    padding:0 25px;
+}
+.list-w2>a{
+    font-size:14px;
+    color:black;
+    padding-left:25px;
+}
+.list-w>a:hover{
+    color:red;
+}
+.list-first>div>span{
+    font-size:14px;
+    color:#808888;
+    padding:0 25px;
+}
+.ccc{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.list-w{
+    width:150px;
+}
+.list-w1{
+    width:768px;
+    border-left:1px solid #ddd
+}
+.list-w2{
+    width:150px;
+}
+
+
+.look{
+    background-color:white;
+    margin:10px auto;
+    width:1070px;
+    height:40px;
+    line-height:40px;
+}
+.look>a{
+    display: inline-block;
+    border:1px solid #ddd;
+    width:60px;
+    text-align: center;
+    font-size:14px;
+    color:black
+}
+.look>a:hover{
+    color:orange
+}
+.look>div{
+    border:1px solid #ddd;
+    display: inline-block;
+    width:100px;
+}
+.look>div>div{
+    margin-left:8px;
+}
+.look>div>div>input{
+    width:30px;
+    outline: none;
+}
+.active{
+    background-color:orange;
+    color:white !important;   
+}
+.list-main{
+    background: white;
+    display: flex;
+    width:1070px;
+    margin:0 auto;
+}
+.list-main>div{
+    margin:0 30px;
+}
+.list-main>div>ul>li{
+    width:250px;
+    height:340px;
+    border-right:1px solid #e9e6e9;
+    border-bottom:1px solid #e9e6e9;
+    float:left;
+}
+.list-main>div>ul>li>div>a>img{
+    width:200px;
+    display: block;
+    margin:0 auto;
+}
+.cart{
+    display: flex;
+    justify-content: space-around;
+    margin-top:20px 
+}
+.cart .agwc{
+    width:80px;
+    height:30px;
+    line-height: 30px;
+    font-size: 14px;
+    text-align: center;
+    color:whitesmoke;
+    background:red;
+    border:1px solid #ddd;
+    border-radius:3px;
+}
+/* .list-main .btn{
+    /* margin-left:10px;
+} */
+.list-main .btn>button{
+    width:30px;
+    height:30px;
+    cursor:pointer;
+}
+.list-main .aaa:hover{
+    color:red;
+}
+.list-main .btn>span{
+    display: inline-block;
+    width:30px;
+    height:30px;
+    line-height:25px;
+    border:1px solid #ddd
+}
+.page{
+    height:40px;
+    position: relative;
+    margin-top:15px;
+}
+.page>div{
+    position: absolute;
+    right:55px
+}
+.page>div>a{
+    display: inline-block;
+    width:40px;
+    height:35px;
+    text-align: center;
+    line-height:35px;
+    border:1px solid #ddd;
+    color:black;
+    font-size:12px;
+    border-radius: 10px
+}
+.page>div>a:hover{
+    border:1px solid orange;
+}
+.page .Active{
+    background:orange;
+    color:white
+}

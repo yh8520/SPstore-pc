@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <link rel="stylesheet" href="css/commer.css">
+    <link rel="stylesheet" href="css/gwc.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+        
+    <header id="header"></header>
+
+   <div class="cart">
+        <div class="nav">
+                <div class="left">
+                    <div>
+                         <span class="my_middle">配送至：</span>
+                            <select name="provs">
+                                <option>—请选择—</option><!--0-->
+                                <option>北京市</option><!--1-->
+                                <option>天津市</option>
+                                <option>河北省</option>
+                            </select>
+                            <select name="cities" class="hide"></select>   
+                    </div>
+                </div>
+                <div class="right">
+                    <input type="text" class="my_small gray" placeholder="请输入关键字" autofocus>
+                </div>
+            </div>
+            <!-- 购物列表 -->
+            <div class="list">
+                <div>
+                    <span class="choose"><input type="checkbox">全选</span>
+                    <span class="pro">商品信息</span>
+                    <span class="price">单价（元）</span>
+                    <span class="num">数量</span>
+                    <span class="count">小计（元）</span>
+                    <span class="more">操作</span>
+                </div>
+            </div>
+            <div class="item">
+                <ul class="my_middle my_bord">
+                    <li class="ckb_t"><input type="checkbox"></li>
+                    <li class="img_w"><img src="img/15.jpg" class="suo_img"></li>
+                    <li class="ckb_t pro_w">美味的水果</li>
+                    <li class="ckb_t price_w bold">￥58</li>
+                    <li class="ckb_t btn_w">
+                        <div>
+                            <button>-</button>
+                            <span>1</span>
+                            <button>+</button>
+                        </div>
+                    </li>
+                    <li class="ckb_t ">
+                        <p>￥58</p>
+                        <p>4.5kg</p>
+                    </li>
+                </ul>
+            </div>
+   </div>
+   <div class="sum_count">
+       <div></div>
+       <div class="sum">
+           <ul class="my_middle">
+               <li>
+                   已选商品1件
+               </li>
+               <li>
+                   合计：<span class="red bold">￥58</span>
+               </li>
+               <li>
+                   <a href="javascript:;">结算</a>
+               </li>
+           </ul>
+       </div>
+   </div>
+
+ <!-- <footer>    
+    <iframe src="footer.html" frameborder="0"  scrolling="no" class="my_footer"></iframe>
+</footer>    -->
+    <script src="JS/jquery-1.11.3.js"></script>
+    <script src="JS/commer.js"></script>
+    <script src="JS/header1.js"></script>
+    <script src="JS/gwc.js"></script>
+</body>
+</html>

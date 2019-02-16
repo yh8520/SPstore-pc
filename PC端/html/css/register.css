@@ -1,0 +1,99 @@
+.reg_top{
+    height:100px;
+    background-color:#ffffff;
+    display: flex;
+    justify-content: space-between;
+    border:1px solid #ece9e9;
+}
+body{
+    background:#fcfcfc;
+}
+.top_img{
+    height:90px;
+}
+.right{
+    margin:25px;
+}
+
+.m{
+    display:inline;
+    position:relative;
+}
+.m a:hover{
+    color:red;
+}
+.m1{
+    display: none;
+    position:absolute;
+    right:10px;
+    z-index: 5; 
+    background:#ffffff;
+}
+.m1>ul>li>a{
+    color:black
+}
+.m1>ul>li{
+    margin-top:10px;
+}
+.m1>ul>li>a:hover{
+    color:red;
+}
+.m:hover .m1{
+    display: block;
+}
+.right>span>a{
+    margin: 0 25px;
+}
+.right>.m>img{
+   vertical-align: middle;
+   margin-right:10px;
+}
+
+.reg{
+    width:300px;
+    margin:0 auto;
+}
+.reg>ul>li .field{
+    width:270px;
+    padding-left:20px;
+    height:50px;
+    margin:0 auto;
+}
+.reg>ul{
+    margin:0 auto;
+    width:500px;
+}
+.reg>ul>li>div>input{
+    outline: none;
+    border-radius:6px;
+    border:1px solid rgb(202, 198, 198)
+}
+.reg>ul>li{
+    margin-top:15px;
+    width:500px;
+}
+div>.box{
+    height:50px;
+
+}
+div>.btn1{
+    width:130px;
+    padding-left:20px;
+}
+div>.btn2{
+    width:135px;
+    height:55px;
+}
+.btn3{
+    width:290px !important;
+    background:#ff3c3c;
+    outline: none;
+    border:1px solid #ddd;
+    border-radius:6px;
+    color:white;
+    font-size:20px;
+}
+.btn3:hover{
+    background:#d32d2d;
+    cursor: pointer;
+}
